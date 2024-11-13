@@ -1,0 +1,44 @@
+#include <stdlib.h>
+#include <time.h>
+#include <iostream>
+using namespace std;
+
+
+int main() {
+    srand(time(NULL));               // Seed the random number generator
+    int goal = rand() % 100 + 1;     // goal will be 1-100, inclusive
+    int num;
+    int counter = 0;
+
+    cout << "I've thought of a number, 1-100." << endl;
+    do {
+        counter++;
+        cin >> num;
+        cout << "Your guess is: " << num << endl;
+
+        if (num > 100 || num < 1) {
+            cout << num << " " << "is not 1-100" << endl;
+        }
+
+
+        if (abs(goal - num) <= 2)
+            cout << "white hot" << endl;
+        else if (abs(goal - num) <= 12)
+            cout << "quite hot" << endl;
+        else if (abs(goal - num) <= 30)
+            cout << "tepid" << endl;
+        else if (abs(goal - num) <= 45)
+            cout << "cool" << endl;
+        else if (abs(goal - num) <= 60)
+            cout << "cold" << endl;
+        else if (abs(goal - num) > 60)
+            cout << "icy" << endl;
+    } while (num != goal);
+
+    if (num = goal) {
+        cout << num << " " << "is correct in " << counter << " " << "guesses";
+    }
+
+
+
+}
